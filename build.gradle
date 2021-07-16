@@ -42,9 +42,6 @@ dependencies {
 
     implementation 'net.dv8tion:JDA:4.3.0_296'
     annotationProcessor 'net.dv8tion:JDA:4.3.0_296'
-
-    implementation 'com.jagrosh:jda-utilities:2.1'
-    annotationProcessor 'com.jagrosh:jda-utilities:2.1'
 }
 
 import org.apache.tools.ant.filters.ReplaceTokens
