@@ -30,11 +30,11 @@ public class DiscordLoader {
                 .addEventListeners(new DiscordHandler())
                 .build();
 
-//        CommandListUpdateAction commands = jda.updateCommands();
-//
-//        commands.addCommands(
-//                new CommandData("ping", "ping to test this bot ig")
-//        ).queue();
+        CommandListUpdateAction commands = jda.updateCommands();
+
+        commands.addCommands(
+                new CommandData("ping", "ping to test this bot ig")
+        ).queue();
     }
 
     public static JDA getJDA() {
