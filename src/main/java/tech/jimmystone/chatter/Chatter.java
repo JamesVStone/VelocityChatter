@@ -59,14 +59,14 @@ public final class Chatter {
         // create luckperms singleton for event reactors
         LuckPerms lpApi = LuckPermsProvider.get();
         logger.info("Spawning discord bot");
-//        try {
-//            DiscordLoader.startBot("ODM4NTQ3NzU0ODA0MTgzMDcw.YI8sdA.9odcn6L5WP8fZtaF17VeekT2yRA");
-//            new DiscordHandler(server);
-//        } catch (LoginException e) {
-//            e.printStackTrace();
-//            logger.error("Failed to log into discord");
-//            return;
-//        }
+        try {
+            DiscordLoader.startBot("");
+            new DiscordHandler(server);
+        } catch (LoginException e) {
+            e.printStackTrace();
+            logger.error("Failed to log into discord");
+            return;
+        }
         logger.info("Registering listeners");
         // register commands and listeners with the proxy
         server.getEventManager().register(this, new ChatListener(server, logger, lpApi));
