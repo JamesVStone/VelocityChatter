@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+}
+
+group = 'tech.jimmystone'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'velocitypowered-repo'
+        url = 'https://repo.velocitypowered.com/snapshots/'
+    }
+    maven {
+        name = 'minecraft-libraries'
+        url = 'https://libraries.minecraft.net/'
+    }
+    maven {
+        name = 'spongepowered-repo'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+    maven {
+        name = 'dv8tion'
+        url = 'https://m2.dv8tion.net/releases'
+    }
+    maven {
+        name = 'bintray'
+        url = 'http://jcenter.bintray.com'
+    }
+}
+
+dependencies {
+    compileOnly 'com.velocitypowered:velocity-api:1.1.8'
+    annotationProcessor 'com.velocitypowered:velocity-api:1.1.8'
+
+    compileOnly 'net.luckperms:api:5.3'
+    annotationProcessor 'net.luckperms:api:5.3'
+
+    implementation 'net.dv8tion:JDA:4.3.0_296'
+    annotationProcessor 'net.dv8tion:JDA:4.3.0_296'
+
+    implementation 'com.jagrosh:jda-utilities:2.1'
+    annotationProcessor 'com.jagrosh:jda-utilities:2.1'
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+task processSources(type: Sync) {
+    from sourceSets.main.java.srcDirs
+    inputs.property 'version', version
+    filter ReplaceTokens, tokens: [version: version]
+    into "$buildDir/src"
+}
+
+compileJava.source = processSources.outputs

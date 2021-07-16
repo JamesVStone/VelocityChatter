@@ -1,0 +1,8 @@
+tech/jimmystone/chatter/Chatter.java
+ tech.jimmystone.chatter.Chatter
+tech/jimmystone/chatter/minecraft/ChatListener.java
+ tech.jimmystone.chatter.minecraft.ChatListener
+tech/jimmystone/chatter/discord/DiscordLoader.java
+ tech.jimmystone.chatter.discord.DiscordLoader
+tech/jimmystone/chatter/discord/DiscordHandler.java
+ tech.jimmystone.chatter.discord.DiscordHandler

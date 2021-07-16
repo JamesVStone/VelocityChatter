@@ -1,0 +1,1 @@
+{"id":"chatter","name":"Chatter","version":"1.0-SNAPSHOT","authors":["JamesVStone"],"dependencies":[{"id":"luckperms","optional":false}],"main":"tech.jimmystone.chatter.Chatter"}
